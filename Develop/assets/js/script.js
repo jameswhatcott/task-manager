@@ -8,6 +8,18 @@ function generateTaskId() {
 }
 
 // Todo: create a function to create a task card
+
+
+// somewhere needs to be added that dateClass needs to be blank again if it's in the done section. so far it's based on date. 
+// maybe we can change it based on where there's a conditional.
+
+// if (placed in the done section) {
+// remove the class of "warn" or "late"
+//  }
+//
+// Which function(s) does this need to be placed?
+
+
 function createTaskCard(task) {
 
         const taskCards = []
