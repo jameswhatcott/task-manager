@@ -147,8 +147,21 @@ function handleDrop(event, ui) {
     // Find the original task card in the DOM
     const originalCard = $(`#${taskId}`);
 
+
+    const currentLaneId = originalCard.closest('.lane').attr('id');
+
+
+
     // Append the original task card to the new lane
     $(this).append(originalCard);
+
+
+    if (currentLaneId === 'done') {
+        originalCard.removeClass('warn late');
+    }
+
+
+
 
     // Update the task's lane property
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
