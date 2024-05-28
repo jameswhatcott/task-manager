@@ -48,6 +48,9 @@ body {
   background-color: rgb(163, 11, 11);
 }
 
+.light {
+  background-color: aliceblue;
+}
 .highlight {
   /* Add styles to highlight the lane */
   background-color: peachpuff;
