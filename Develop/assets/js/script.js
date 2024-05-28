@@ -124,8 +124,18 @@ function handleAddTask(event){
 // Todo: create a function to handle deleting a task
 function handleDeleteTask(event){
     event.preventDefault();
-    const taskId = $(this).closest('.task-card').attr('id')
-       $(`#${taskId}`).remove();
+    const taskId = $(this).closest('.task-card').attr('id');
+    $(`#${taskId}`).remove();
+    
+       const taskIndex = taskList.findIndex(task => task.id === taskId);
+
+    // If the task is found, remove it from the array
+    if (taskIndex !== -1) {
+        taskList.splice(taskIndex, 1);
+    }
+
+    // Update the taskList in localStorage
+    localStorage.setItem('tasks', JSON.stringify(taskList));
 }
 
 // Todo: create a function to handle dropping a task into a new status lane
